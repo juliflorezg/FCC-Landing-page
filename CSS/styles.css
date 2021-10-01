@@ -39,6 +39,10 @@ header{
    color: rgb(50, 50, 50);
 }
 
+.hamburger{
+   display:none;
+}
+
 
 iframe{
    width: 60vw;
@@ -48,6 +52,7 @@ iframe{
 @media screen and (max-width:500px){
 
    .hamburger  {
+      display: block;
       position: absolute;
       top: 0;
       right: 0;
@@ -60,6 +65,7 @@ iframe{
       flex-direction: column;
       align-items: flex-start;
       padding: 0;
+      /* background-color: transparent; */
    }
 
    #header-img{
@@ -69,11 +75,11 @@ iframe{
    }
 
    .nav-bar{
-      /* background-color: red; */
+      background-color: transparent;
       width: 100%;
       opacity: 0;
       display: none;
-
+      transform: translate(-100%, 0);
       transition: all .5s ease-in-out;
    }
 
@@ -91,7 +97,7 @@ iframe{
    }
 
    .nav-bar.is-active{
-      
+      transform: translate(0, 0);
       display: block;
       opacity: 1;
 
