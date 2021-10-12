@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300&display=swap');
+
 *{
    --header-color: rgb(182, 179, 179);
    --main-text-color: rgb(41, 41, 41);
+   --title-font : 'Bebas Neue', cursive;
+   --text-font : 'Montserrat', sans-serif;
    box-sizing: border-box;
    padding: 0;
 }
@@ -12,6 +16,19 @@ html{
 body{
    margin: 0;
    padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6{
+   font-family: var(--title-font)
+}
+
+p{
+   font-family: var(--text-font)
+}
+
+img{
+   max-width: 100%;
+   height: auto;
 }
 
 main{
@@ -31,6 +48,7 @@ header{
    background-color: var(--header-color);
    color: white;
    opacity: .96;
+   font-family: var(--title-font);
 }
 
 #header-img{
@@ -73,10 +91,26 @@ header{
    height: 40vw;
 }
 
-.feature-1{
-   display: flex;
-   
 
+
+.features > div{
+   display: flex;
+   max-width: 100%
+
+}
+
+.feature-1{
+   flex-direction: row-reverse;
+}
+
+.feature-1 > div{
+   flex: 2 0 500px;
+}
+
+.feature-1 img{
+   width: 40%;
+   flex-shrink: 2;
+   flex-basis: 200px;
 }
 
 
@@ -171,6 +205,33 @@ header{
       width: 99vw;
       height: 30vh;
    }
+
+   
+   .features, .features > div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 2rem auto
+   }
+
+   .features{
+      margin-top: 5rem;
+   }
+
+   .feature-title{
+      text-align: center;
+      font-size: 1.3rem;
+   }
+
+   .feature-description{
+      text-align: center;
+      font-size: .9rem
+   }
+
+   .features img{
+      width : 60%;
+   }
+   
 
    
 
