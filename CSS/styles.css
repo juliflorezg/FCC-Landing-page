@@ -3,6 +3,8 @@
 *{
    --header-color: rgb(182, 179, 179);
    --main-text-color: rgb(41, 41, 41);
+   --main-text-color-opacity: rgba(41, 41, 41, .7);
+   --yellow: rgb(225, 225, 0);
    --title-font : 'Bebas Neue', cursive;
    --text-font : 'Montserrat', sans-serif;
    box-sizing: border-box;
@@ -59,8 +61,8 @@ header{
 
 .nav-link{
    margin: 0 1rem;
-   padding: .2rem .4rem;
-   border-radius: 6px;
+   /* padding: .2rem .4rem; */
+   /* border-radius: 6px; */
    background-color: var(--header-color);
    text-decoration: none;
    color: var(--main-text-color);
@@ -69,11 +71,36 @@ header{
 }
 
 .nav-link:hover{
-   padding: .2rem .4rem;
-   border-radius: 6px;
-   background-color: rgb(50, 50, 50);
-   background-color: white;
-   color: rgb(50, 50, 50);
+   /* padding: .2rem .4rem; */
+   /* border-radius: 6px; */
+   /* background-color: rgb(50, 50, 50); */
+   /* background-color: white; */
+   color: var(--main-text-color-opacity);
+}
+
+.nav-bar a{
+   position: relative;
+   transition: all 0.3s ease;
+}
+
+.nav-bar a::before{
+   content: '';
+   display: block;
+   height: 5px;
+   background-color: var(--yellow);
+   position: absolute;
+   bottom: -20px;
+   left: 0;
+   right: 0;
+   transform: scale(0,1);
+   transform-origin: center;
+   transition: transform ease-in-out 0.3s;
+
+}
+
+
+.nav-bar a:hover::before{
+   transform: scale(1,1)
 }
 
 .hamburger{
@@ -95,8 +122,15 @@ header{
 
 .features > div{
    display: flex;
-   max-width: 100%
+   gap: 30px;
+   max-width: 100%;
+   margin: 12rem 3rem
 
+}
+
+.features h2, 
+.features p{
+   text-align: center;
 }
 
 .feature-1{
@@ -104,7 +138,8 @@ header{
 }
 
 .feature-1 > div{
-   flex: 2 0 500px;
+   flex: 2 0 200px;
+   align-self: center;
 }
 
 .feature-1 img{
@@ -113,13 +148,48 @@ header{
    flex-basis: 200px;
 }
 
-
+.feature-2 img,
+.feature-3 img{
+   max-width: 40%;
+   height: auto;
+}  
 
 .form * {
    display: block;
    margin: .5rem auto
 }
 
+.footer{
+   margin: 4rem auto 8rem auto
+}
+
+.footer h2{
+   margin: 2rem auto
+}
+
+#email{
+   font-family: var(--text-font);
+   display: block;
+   width: 100%;
+   margin: 1rem auto;
+}
+
+#submit{
+   font-family: var(--title-font);
+   display: block;
+   width: 100%;
+   font-size: 20px;
+   margin: 1rem auto;
+   background-color: var(--header-color);
+   border: 2px solid transparent;
+   border-radius: 3px;
+   transition: border 0.2s ease-in-out;
+}
+
+#submit:hover{
+   border: 2px solid var(--main-text-color);
+   cursor : pointer;
+}
 
 /**            Mobile styles              **/
 
@@ -135,6 +205,7 @@ header{
       flex-direction:column;
       justify-content: center;
       align-items: center;
+      position: relative;
    }
 
    .hamburger  {
@@ -143,11 +214,13 @@ header{
       top: 0;
       right: 0;
       margin: 1.25rem;
+      margin-left: auto;
       z-index: 169;
    }
 
    header{
-      position: absolute;
+      position: sticky;
+      top: 0;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -165,6 +238,8 @@ header{
    }
 
    .nav-bar{
+      position: absolute;
+      margin-top: var(--header-height);
       background-color: transparent;
       width: 100%;
       opacity: 0;
