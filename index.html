@@ -14,23 +14,26 @@
    <header id="header">
       <img src="assets/corsair-logo.png" alt="" id="header-img">
       <nav id="nav-bar" class="nav-bar">
-         <a href="#" class="nav-link">Home</a>
+         <a href="#home" class="nav-link">Home</a>
          <a href="#features" class="nav-link">Features</a>
-         <a href="#" class="nav-link">Pricing</a>
+         <a href="#footer" class="nav-link">Contact</a>
       </nav>
 
+      <button class="hamburger hamburger--spin" type="button">
+         <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+         </span>
+      </button>   
    </header>
    
-   <button class="hamburger hamburger--spin" type="button">
-      <span class="hamburger-box">
-         <span class="hamburger-inner"></span>
-      </span>
-   </button>   
 
    <main>
-      <h1 class= "title">Introducing the new generation of<br>Corsair gaming headsets</h1>
+      <section id="home">
+         <h1 class= "title">Introducing the new generation of<br>Corsair gaming headsets</h1>
       
       <iframe id="video" class="video" width="550" height="315" src="https://www.youtube.com/embed/vGYGfDrt-QA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      </section>
 
       <section id ="features" class="features">
          <div class="feature-1">
@@ -56,15 +59,17 @@
          </div>
       </section>
       
-      <h3>Would like to know more </h3>
+      <footer id="footer" class="footer"> 
+         <h2>Would like to know more ?</h2>
 
-      <form action="https://www.freecodecamp.com/email-submit" id="form" class="form">
-         <input type="email" name="email" id="email" placeholder="Enter your email address">
-         <input type="submit" value="Submit" id="submit">
-      </form>
+         <form action="https://www.freecodecamp.com/email-submit" id="form" class="form">
+            <input type="email" name="email" id="email" placeholder="Enter your email address">
+            <input type="submit" value="Submit" id="submit">
+         </form>
+      </footer>
    </main>
       
-      <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+      <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
       <script src="script.js"></script>
    </body>
    </html>
